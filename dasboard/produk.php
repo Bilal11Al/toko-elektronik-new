@@ -8,7 +8,7 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
 if (isset($_GET['cari'])) {
     $cari = $_GET['cari'];
     $caridata = mysqli_query($koneksi, "SELECT * FROM toko WHERE name LIKE '%$cari%'  OR kategori LIKE '%$cari%'");
-    $rows = mysqli_fetch_all($caridata, MYSQLI_ASSOC); // ← langsung simpan ke $rows
+    $rows = mysqli_fetch_all($caridata, MYSQLI_ASSOC); 
 } else {
     $query = mysqli_query($koneksi, "SELECT * FROM toko ORDER BY id DESC");
     $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
